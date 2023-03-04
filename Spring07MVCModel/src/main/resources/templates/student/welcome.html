@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
 </head>
+
 <body>
 
     <h1>Welcome to the Thymeleaf Demo</h1>
     <h2 th:text="'Hello, ' + ${name} + '!'"></h2>
     <h2 th:text="${description}"></h2>
-    
+    <h2 th:text="${subject}"></h2>
+    <h2 th:text="${studentId}"></h2>
+    <h2 th:text="${studentIds.get(2)}"></h2>
+    <h2 th:text="${student.firstName}"></h2>
+
 </body>
+
 </html>
