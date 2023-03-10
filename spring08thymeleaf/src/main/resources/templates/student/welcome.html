@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+
+<h2>Welcome Page</h2>
+
+<div th:replace="fragments/index :: main-menu"></div> <!-- This is the fragment -->
+<div th:replace="fragments/index :: footer-menu"></div> <!-- This is the fragment -->
+
+</body>
+</html>

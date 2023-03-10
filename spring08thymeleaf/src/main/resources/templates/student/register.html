@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+
+<body>
+
+    <h2>Welcome New Student</h2>
+
+    <h2 th:text="${students.get(2).firstName}"></h2>
+    <h2 th:text="${students.get(3).lastName}"></h2>
+
+    <!-- Concatenation -->
+
+    <h2 th:text="${students.get(2).firstName} + ' ' + ${students.get(2).lastName}"></h2>
+
+    <!-- Link -->
+
+    <a th:href="@{https://www.google.com}">Register Google</a>
+    <br>
+    <a th:href="@{/student/welcome}">Go to this Link</a>
+
+    <!-- Adding Parameters to the URL -->
+
+    <br>
+    <a th:href="@{/student/welcome(name=${students.get(2).firstName})}">Welcome a Random Student-1</a>
+    <br>
+    <a th:href="@{/student/welcome(id=${students.get(2).age})}">Welcome a Random Student-2</a>
+
+    <!-- Iteration -->
+
+    <br>
+    <h2>Student List</h2>
+    <ul>
+        <li th:each="student : ${students}">
+            <h2 th:text="${student.firstName} + ' ' + ${student.lastName}"></h2>
+        </li>
+    </ul>
+
+    <!-- Conditional -->
+
+    <br>
+    <h2>Conditional</h2>
+    <h2 th:if="${students.get(2).age > 18}">Student is older than 18</h2>
+    <br>
+    <h2 th:if="${students.get(2).age == 20}">Student is 20</h2>
+
+    <!-- Fragments -->
+
+    <br>
+    <h2>Fragment</h2>
+    <div th:replace="fragments :: footer"></div>
+    
+
+
+
+</body>
+</html>
