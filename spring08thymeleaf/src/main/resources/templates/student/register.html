@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title th:text="#{index.page.title}">Welcome</title>
 </head>
 
 <body>
@@ -45,17 +45,20 @@
     <br>
     <h2>Conditional</h2>
     <h2 th:if="${students.get(2).age > 18}">Student is older than 18</h2>
-    <br>
     <h2 th:if="${students.get(2).age == 20}">Student is 20</h2>
+    <div th:text="${students.get(2).age > 18} ? 'Student is older than 18' : 'Student is younger than 18'"></div>
+    ><div>
+
+        <span th:if="${students.get(2).getState() == 'CA'}">California</span>
+        <span th:unless="${students.get(2).getState() == 'CA'}">Not California</span>
+
+    </div>
 
     <!-- Fragments -->
 
-    <br>
+    <!-- <br>
     <h2>Fragment</h2>
-    <div th:replace="fragments :: footer"></div>
+    <div th:replace="fragments :: footer"></div> -->
     
-
-
-
 </body>
 </html>

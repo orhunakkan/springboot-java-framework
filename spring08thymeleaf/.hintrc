@@ -10,7 +10,22 @@
         "html-has-lang": "off"
       }
     ],
-    "compat-api/css": "off"
+    "compat-api/css": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id-active": "off",
+        "duplicate-id-aria": "off"
+      }
+    ],
+    "no-inline-styles": "off",
+    "axe/forms": [
+      "default",
+      {
+        "label": "off",
+        "select-name": "off"
+      }
+    ]
   },
   "browserslist": [
     "defaults",
